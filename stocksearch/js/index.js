@@ -60,7 +60,7 @@ const stockSearch = async (newStockCode) => {
       anchor.innerHTML = newstr;
       container.appendChild(divContainer);
       compareArray = [];
-      startCompareButton.innerText = `Compare ${compareArray.length} Companies`;
+      startCompareButton.innerText = `Compare Stocks by selecting up to three Companies`;
       compareButton.onclick = function () {
         if (compareArray.length < 3) {
           if (compareArray.length === 0) {
@@ -157,7 +157,7 @@ const stockTicker = document.getElementById("ticker");
 const compareList = document.getElementById("compareList");
 const startCompareButton = document.getElementById("startCompare");
 const loadTicker = async () => {
-  const tickerUrl = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/quotes/nyse`;
+  const tickerUrl = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/quotes/nasdaq`;
   const tickerResponse = await fetch(tickerUrl);
   const tickerData = await tickerResponse.json();
   for (let i = 0; i < 100; i++) {
@@ -167,7 +167,7 @@ const loadTicker = async () => {
     tickerItemPrice.classList.add("ticker-item-price");
     tickerItem.classList.add("ticker-item");
     tickerItem.innerHTML = `${tickerData[i].symbol}`;
-    tickerItemPrice.innerHTML = `(${tickerData[i].price.toFixed(2)})`;
+    tickerItemPrice.innerHTML = `$${tickerData[i].price.toFixed(2)}`;
     stockTicker.append(tickerItem);
     tickerItem.append(tickerItemPrice);
   }

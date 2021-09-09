@@ -145,7 +145,7 @@ body {
     linear-gradient(329deg, hsl(148, 0%, 0%), hsl(148, 0%, 0%));
 }
 .ticker-item-price {
-  color: green;
+  color: #32cd32;
   margin-left: 0.5rem;
 }
 .stock-search-title {
@@ -171,13 +171,19 @@ body {
 .stock-search input {
   width: 50%;
 }
+.stock-search input::placeholder {
+  font-weight: bold;
+  font-family: "montserrat", Arial, sans-serif;
+  font-size: 1rem;
+}
 .compare-wrapper {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 45%;
   background-color: black;
-  border: 1px solid white;
-  margin: auto;
+  border: 2px solid white;
+  border-radius: 6px;
+  margin: 0.5rem auto;
 }
 .comp-entry-button {
   background-color: #61d1f7;
@@ -186,7 +192,7 @@ body {
   border-radius: 6px;
   padding: 0.33rem;
   font-family: "montserrat";
-  margin: 0.33rem 0.25rem;
+  margin: 0.33rem 0.33rem;
   min-width: 4rem;
 }
 .highlight {
@@ -348,7 +354,7 @@ body {
   border-radius: 6px;
   padding: 0.33rem;
   font-family: "montserrat";
-  margin: 0.33rem 0;
+  margin: 0.33rem 0.33rem;
 }
 
 /* Company-page-specific CSS Begins */

@@ -28,10 +28,13 @@
       <div class="searchbar-wrapper">
         <div class="searchbar">
           <div class="stock-search-title">Search Nasdaq Stocks</div>
-          <form class="stock-search" id="stock-search" method="GET">
-            <input type="text" id="stock-code" />
-            <button type="submit">Search</button>
-          </form>
+          <div class="stock-search" id="stock-search">
+            <input
+              type="text"
+              id="stock-code"
+              placeholder="Type here to begin..."
+            />
+          </div>
 
           <!-- After clicking search, send fetch request -->
           <!-- Make sure to use a loading indicator while fetching -->
