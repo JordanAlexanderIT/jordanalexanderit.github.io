@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Page for</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="./img/mee6.png" />
+  </head>
+  <body>
+    <div class="company-page-wrapper">
+      <div class="loader-box" id="loaderBox"><div id="loader"></div></div>
+      <!-- Show loading indicator, when loading company data and stock price history. -->
+      <div class="company-top-row-wrapper">
+        <div class="company-image" id="company-image"></div>
+        <div class="company-name" id="company-name"></div>
+      </div>
+      <div class="stock-price-wrapper">
+        <div class="current-stock-price">
+          Stock Price: <span id="current-stock-price"></span>
+        </div>
+        <div class="stock-price-change" id="stock-price-change"></div>
+      </div>
+      <div class="company-description" id="company-description"></div>
+      <div class="company-link" id="company-link"></div>
+      <div class="loader-box" id="chartLoaderBox">
+        <div id="loader-box-chart"></div>
+      </div>
+      <div class="stock-chart" id="stock-chart">
+        <canvas id="myChart" class="chart-itself"></canvas>
+      </div>
+    </div>
+    <!-- I think in future I would like to host this locally to change some global values -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script src="js/company.js"></script>
+  </body>
+</html>

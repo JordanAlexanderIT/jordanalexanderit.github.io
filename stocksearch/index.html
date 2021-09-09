@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITC JS Project</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="./img/mee6.png" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="stock-ticker" id="stockTicker">
+        <div class="ticker" id="ticker">
+          <!-- <div class="ticker-item"></div> -->
+        </div>
+      </div>
+      <div class="compare-wrapper" id="compareWrapper">
+        <div class="compare-list" id="compareList"></div>
+        <button id="startCompare" class="start-compare-button">Compare</button>
+      </div>
+      <div class="searchbar-wrapper">
+        <div class="searchbar">
+          <div class="stock-search-title">Search Nasdaq Stocks</div>
+          <form class="stock-search" id="stock-search" method="GET">
+            <input type="text" id="stock-code" />
+            <button type="submit">Search</button>
+          </form>
+
+          <!-- After clicking search, send fetch request -->
+          <!-- Make sure to use a loading indicator while fetching -->
+          <!-- Make sure each of these results is a link to the company page which will be part of Milestone 2 -->
+        </div>
+      </div>
+      <div class="main-content-wrapper">
+        <div class="loader-box"><div id="loader"></div></div>
+        <div class="result-list" id="result-list">
+          <!-- I'm everything below the search-bar! -->
+        </div>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
+
+<!-- Milestones 5, 6, 9 not so necessary but encouraged to do them -->

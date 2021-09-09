@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparing Company Stocks</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="./img/mee6.png" />
+  </head>
+  <body>
+    <div class="compare-page-wrapper">
+      <div class="compare-title-text">
+        Compare Stocks (Note: If the company data is missing, it will not appear
+        here):
+      </div>
+      <div class="compare-results-wrapper" id="compareResultsWrapper">
+        <div class="loader-box" id="loaderBox"><div id="loader"></div></div>
+
+        <!-- HEY ME! We're adding the sector in brackets as a span this on this page too! Don't forget! -->
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script src="./js/compare.js"></script>
+  </body>
+</html>
