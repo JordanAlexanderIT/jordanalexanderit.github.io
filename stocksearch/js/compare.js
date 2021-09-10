@@ -51,28 +51,38 @@ const multiCompare = async () => {
         compImage = document.createElement("img");
         compNameContainer = document.createElement("div");
         compName = document.createElement("h1");
+        sectorSpan = document.createElement("span");
         resultCompTopRow.append(compImageContainer, compNameContainer);
         compNameContainer.classList.add("company-name-compare");
         compImageContainer.classList.add("company-image-compare");
         compImageContainer.append(compImage);
         compImage.src = data.companyProfiles[i].profile.image;
+        // Assigning unique ids for each image for error-handling at the end
+        compImage.id = `check-id-${[i]}`;
+        // Why does this only affect the last box? Need the Scooby gang to solve this mystery I think..
         compImage.onerror = function () {
           compImage.src = `./img/mee6.png`;
         };
         compNameContainer.append(compName);
-        compName.innerText = `${data.companyProfiles[i].profile.companyName} (${data.companyProfiles[i].profile.sector})`;
+        compName.innerText = `${data.companyProfiles[i].profile.companyName}`;
+        // Append the company's business sector if it exists
+        if (data.companyProfiles[i].profile.sector) {
+          compName.append(sectorSpan);
+          sectorSpan.classList.add("sector-span");
+          sectorSpan.innerText = `(${data.companyProfiles[i].profile.sector})`;
+        }
         // Create the stock-price wrapper that goes below the top row
         stockPriceWrapper = document.createElement("div");
         curStockPrice = document.createElement("div");
         curStockPriceSpan = document.createElement("span");
         stockPriceChange = document.createElement("div");
-        resultColumn.append(stockPriceWrapper);
+        resultCompTopRow.append(stockPriceWrapper);
         stockPriceWrapper.classList.add("stock-price-wrapper");
         stockPriceWrapper.append(curStockPrice);
         curStockPrice.innerText = `Stock Price: `;
         curStockPrice.classList.add("current-stock-price");
         curStockPrice.append(curStockPriceSpan);
-        curStockPriceSpan.innerText = `$ ${data.companyProfiles[
+        curStockPriceSpan.innerText = `$${data.companyProfiles[
           i
         ].profile.price.toFixed(2)}`;
         stockPriceWrapper.append(stockPriceChange);
@@ -87,14 +97,14 @@ const multiCompare = async () => {
         // Create the company-description boxes
         compDescriptionContainer = document.createElement("div");
         compDescription = document.createElement("p");
-        resultColumn.append(compDescriptionContainer);
+        resultCompTopRow.append(compDescriptionContainer);
         compDescriptionContainer.classList.add("company-description-compare");
         compDescriptionContainer.append(compDescription);
         compDescription.innerText = `${data.companyProfiles[i].profile.description}`;
         // Create the website-links
         compLinkContainer = document.createElement("div");
         compLink = document.createElement("a");
-        resultColumn.append(compLinkContainer);
+        resultCompTopRow.append(compLinkContainer);
         compLinkContainer.classList.add("company-link");
         compLinkContainer.append(compLink);
         compLink.href = `${data.companyProfiles[i].profile.website}`;
@@ -200,6 +210,19 @@ const multiCompare = async () => {
     console.log(err);
     compareResultsWrapper.innerHTML = `<h1>You are trying to pass only one or more than three companies into the compare page. Please try again.</h1>`;
     // Error-handling
+  }
+  // Oddly, this is how I had to handle replacing the images for the first two companies on the left -- elsewise for reasons I don't understand it only replaced the last box's image
+  let leftBoxTest = document.getElementById("check-id-0");
+  let middleBoxTest = document.getElementById("check-id-1");
+  if (leftBoxTest) {
+    leftBoxTest.onerror = function () {
+      leftBoxTest.src = `./img/mee6.png`;
+    };
+  }
+  if (middleBoxTest) {
+    middleBoxTest.onerror = function () {
+      middleBoxTest.src = `./img/mee6.png`;
+    };
   }
 };
 multiCompare();

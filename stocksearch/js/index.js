@@ -3,7 +3,6 @@ const compSymbol = url.searchParams.get("search");
 // console.log(compSymbol);
 
 let autoFetch;
-// console.log(autoFetch);
 
 const loader = document.getElementById("loader");
 // To add the css-loading-indicator along with a timeout failsafe.
@@ -53,14 +52,14 @@ const stockSearch = async (newStockCode) => {
 
       // RegExp magic, $& returns the matched string segment
 
-      let re = RegExp(newStockCode, "gi");
+      let match = RegExp(newStockCode, "gi");
       let str = anchor.innerText;
-      let newstr = str.replace(re, `<mark>$&</mark>`);
-      // console.log(newstr);
-      anchor.innerHTML = newstr;
+      let newString = str.replace(match, `<mark>$&</mark>`);
+      anchor.innerHTML = newString;
+
       container.appendChild(divContainer);
       compareArray = [];
-      startCompareButton.innerText = `Compare Stocks by selecting up to three Companies`;
+      startCompareButton.innerText = `Compare stocks by selecting up to three companies`;
       compareButton.onclick = function () {
         if (compareArray.length < 3) {
           if (compareArray.length === 0) {
@@ -122,7 +121,7 @@ const stockSearch = async (newStockCode) => {
           }
           startCompareButton.onclick = function () {
             // Check to see if at least two companies are in the compare-box
-            if (compareArray.length <= 1) {
+            if (compareArray.length <= 1 || compareArray.length > 3) {
               alert("Please select at least two companies to compare");
             } else {
               // window.location.href = `./compare.html?symbol=${compareArray[0]},${compareArray[1]},${compareArray[2]}`;
@@ -160,7 +159,7 @@ const loadTicker = async () => {
   const tickerUrl = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/quotes/nasdaq`;
   const tickerResponse = await fetch(tickerUrl);
   const tickerData = await tickerResponse.json();
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 125; i++) {
     // console.log(tickerData[i]);
     let tickerItem = document.createElement("div");
     let tickerItemPrice = document.createElement("span");
@@ -187,10 +186,25 @@ loadTicker();
 searchtimer = () => (clear = true);
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("stock-search").addEventListener("input", (evt) => {
+    // Check to see if there are companies within the compare-box and clear them upon a new search
+    // Or if I can get this working, allows the user to compare from multiple search results
+    compareListClear = document.getElementById("compareList");
+    compareListClear.innerHTML = ``;
     clearTimeout(searchtimer);
     searchtimer = setTimeout(() => {
       // This line clears the results from the previous search.
       container.innerHTML = "";
+
+      // This idea is a work-in-progress that I hope to use for a future update
+      // I think the smart way to go about this is using localstorage and saving up to three entries at a time
+
+      // nemo = compareListSave.innerText;
+      // splitFish = nemo.split(/[ ,]+|✖|,/);
+      // fixNemo = splitFish.filter(function (str) {
+      //   return /\S/.test(str);
+      // });
+      // console.log(fixNemo);
+
       // This line grabs the text from the user input to begin searching for stocks.
       let newStockCode = evt.target.value;
       stockSearch(newStockCode);

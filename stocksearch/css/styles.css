@@ -41,11 +41,62 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  /* background-color: white; */
+  background-image: radial-gradient(
+      circle at 13% 47%,
+      rgba(140, 140, 140, 0.03) 0%,
+      rgba(140, 140, 140, 0.03) 25%,
+      transparent 25%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 28% 63%,
+      rgba(143, 143, 143, 0.03) 0%,
+      rgba(143, 143, 143, 0.03) 16%,
+      transparent 16%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 81% 56%,
+      rgba(65, 65, 65, 0.03) 0%,
+      rgba(65, 65, 65, 0.03) 12%,
+      transparent 12%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 26% 48%,
+      rgba(60, 60, 60, 0.03) 0%,
+      rgba(60, 60, 60, 0.03) 6%,
+      transparent 6%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 97% 17%,
+      rgba(150, 150, 150, 0.03) 0%,
+      rgba(150, 150, 150, 0.03) 56%,
+      transparent 56%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(25, 25, 25, 0.03) 0%,
+      rgba(25, 25, 25, 0.03) 36%,
+      transparent 36%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 55% 52%,
+      rgba(69, 69, 69, 0.03) 0%,
+      rgba(69, 69, 69, 0.03) 6%,
+      transparent 6%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
 }
 .stock-ticker {
   height: 4%;
-  background-color: black;
+  background-color: white;
+  border-bottom: 2px solid #61d1f7;
   overflow: hidden;
   padding-left: 100%;
   box-sizing: content-box;
@@ -91,58 +142,22 @@ body {
   animation-timing-function: linear;
   -webkit-animation-name: ticker;
   animation-name: ticker;
-  -webkit-animation-duration: 150s;
-  animation-duration: 150s;
+  -webkit-animation-duration: 200s;
+  animation-duration: 200s;
 }
 .ticker-item {
   display: inline-block;
   padding: 0 1rem;
   font-size: 1rem;
-  color: white;
+  color: black;
 }
 .searchbar-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   height: 10%;
   width: 100%;
-  border-bottom: 1px solid lightgray;
-  /* background-color: burlywood; */
-  background-image: linear-gradient(
-      200deg,
-      rgba(171, 171, 171, 0.05) 0%,
-      rgba(171, 171, 171, 0.05) 23%,
-      rgba(90, 90, 90, 0.05) 23%,
-      rgba(90, 90, 90, 0.05) 48%,
-      rgba(65, 65, 65, 0.05) 48%,
-      rgba(65, 65, 65, 0.05) 61%,
-      rgba(232, 232, 232, 0.05) 61%,
-      rgba(232, 232, 232, 0.05) 100%
-    ),
-    linear-gradient(
-      126deg,
-      rgba(194, 194, 194, 0.05) 0%,
-      rgba(194, 194, 194, 0.05) 11%,
-      rgba(127, 127, 127, 0.05) 11%,
-      rgba(127, 127, 127, 0.05) 33%,
-      rgba(117, 117, 117, 0.05) 33%,
-      rgba(117, 117, 117, 0.05) 99%,
-      rgba(248, 248, 248, 0.05) 99%,
-      rgba(248, 248, 248, 0.05) 100%
-    ),
-    linear-gradient(
-      144deg,
-      rgba(64, 64, 64, 0.05) 0%,
-      rgba(64, 64, 64, 0.05) 33%,
-      rgba(211, 211, 211, 0.05) 33%,
-      rgba(211, 211, 211, 0.05) 50%,
-      rgba(53, 53, 53, 0.05) 50%,
-      rgba(53, 53, 53, 0.05) 75%,
-      rgba(144, 144, 144, 0.05) 75%,
-      rgba(144, 144, 144, 0.05) 100%
-    ),
-    linear-gradient(329deg, hsl(148, 0%, 0%), hsl(148, 0%, 0%));
+  border-bottom: 2px solid #61d1f7;
 }
 .ticker-item-price {
   color: #32cd32;
@@ -151,9 +166,9 @@ body {
 .stock-search-title {
   text-align: center;
   font-size: 1.5rem;
-  color: white;
-  height: 50%;
-  padding-bottom: 1rem;
+  color: black;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
 }
 .searchbar {
   display: flex;
@@ -167,23 +182,29 @@ body {
   justify-content: center;
   width: 100%;
   height: 50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .stock-search input {
   width: 50%;
+  height: 25px;
+  border: 2px solid #61d1f7;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
 }
 .stock-search input::placeholder {
   font-weight: bold;
   font-family: "montserrat", Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 0.65rem;
 }
 .compare-wrapper {
   display: flex;
   justify-content: center;
   width: 45%;
-  background-color: black;
-  border: 2px solid white;
+  background-color: white;
+  border: 2px solid #61d1f7;
   border-radius: 6px;
   margin: 0.5rem auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .comp-entry-button {
   background-color: #61d1f7;
@@ -204,88 +225,131 @@ body {
   align-items: center;
   height: 85%;
   width: 100%;
-  background-image: radial-gradient(
-      circle at 28% 44%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 1%,
-      transparent 1%,
-      transparent 73%,
-      transparent 73%,
-      transparent 100%
+  background-image: linear-gradient(
+      158deg,
+      rgba(84, 84, 84, 0.03) 0%,
+      rgba(84, 84, 84, 0.03) 20%,
+      rgba(219, 219, 219, 0.03) 20%,
+      rgba(219, 219, 219, 0.03) 40%,
+      rgba(54, 54, 54, 0.03) 40%,
+      rgba(54, 54, 54, 0.03) 60%,
+      rgba(99, 99, 99, 0.03) 60%,
+      rgba(99, 99, 99, 0.03) 80%,
+      rgba(92, 92, 92, 0.03) 80%,
+      rgba(92, 92, 92, 0.03) 100%
     ),
-    radial-gradient(
-      circle at 81% 65%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 18%,
-      transparent 18%,
-      transparent 77%,
-      transparent 77%,
-      transparent 100%
+    linear-gradient(
+      45deg,
+      rgba(221, 221, 221, 0.02) 0%,
+      rgba(221, 221, 221, 0.02) 14.286%,
+      rgba(8, 8, 8, 0.02) 14.286%,
+      rgba(8, 8, 8, 0.02) 28.572%,
+      rgba(52, 52, 52, 0.02) 28.572%,
+      rgba(52, 52, 52, 0.02) 42.858%,
+      rgba(234, 234, 234, 0.02) 42.858%,
+      rgba(234, 234, 234, 0.02) 57.144%,
+      rgba(81, 81, 81, 0.02) 57.144%,
+      rgba(81, 81, 81, 0.02) 71.42999999999999%,
+      rgba(239, 239, 239, 0.02) 71.43%,
+      rgba(239, 239, 239, 0.02) 85.71600000000001%,
+      rgba(187, 187, 187, 0.02) 85.716%,
+      rgba(187, 187, 187, 0.02) 100.002%
     ),
-    radial-gradient(
-      circle at 51% 45%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 11%,
-      transparent 11%,
-      transparent 12%,
-      transparent 12%,
-      transparent 100%
+    linear-gradient(
+      109deg,
+      rgba(33, 33, 33, 0.03) 0%,
+      rgba(33, 33, 33, 0.03) 12.5%,
+      rgba(147, 147, 147, 0.03) 12.5%,
+      rgba(147, 147, 147, 0.03) 25%,
+      rgba(131, 131, 131, 0.03) 25%,
+      rgba(131, 131, 131, 0.03) 37.5%,
+      rgba(151, 151, 151, 0.03) 37.5%,
+      rgba(151, 151, 151, 0.03) 50%,
+      rgba(211, 211, 211, 0.03) 50%,
+      rgba(211, 211, 211, 0.03) 62.5%,
+      rgba(39, 39, 39, 0.03) 62.5%,
+      rgba(39, 39, 39, 0.03) 75%,
+      rgba(55, 55, 55, 0.03) 75%,
+      rgba(55, 55, 55, 0.03) 87.5%,
+      rgba(82, 82, 82, 0.03) 87.5%,
+      rgba(82, 82, 82, 0.03) 100%
     ),
-    radial-gradient(
-      circle at 10% 56%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 82%,
-      transparent 82%,
-      transparent 90%,
-      transparent 90%,
-      transparent 100%
+    linear-gradient(
+      348deg,
+      rgba(42, 42, 42, 0.02) 0%,
+      rgba(42, 42, 42, 0.02) 20%,
+      rgba(8, 8, 8, 0.02) 20%,
+      rgba(8, 8, 8, 0.02) 40%,
+      rgba(242, 242, 242, 0.02) 40%,
+      rgba(242, 242, 242, 0.02) 60%,
+      rgba(42, 42, 42, 0.02) 60%,
+      rgba(42, 42, 42, 0.02) 80%,
+      rgba(80, 80, 80, 0.02) 80%,
+      rgba(80, 80, 80, 0.02) 100%
     ),
-    radial-gradient(
-      circle at 42% 35%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 22%,
-      transparent 22%,
-      transparent 77%,
-      transparent 77%,
-      transparent 100%
+    linear-gradient(
+      120deg,
+      rgba(106, 106, 106, 0.03) 0%,
+      rgba(106, 106, 106, 0.03) 14.286%,
+      rgba(67, 67, 67, 0.03) 14.286%,
+      rgba(67, 67, 67, 0.03) 28.572%,
+      rgba(134, 134, 134, 0.03) 28.572%,
+      rgba(134, 134, 134, 0.03) 42.858%,
+      rgba(19, 19, 19, 0.03) 42.858%,
+      rgba(19, 19, 19, 0.03) 57.144%,
+      rgba(101, 101, 101, 0.03) 57.144%,
+      rgba(101, 101, 101, 0.03) 71.42999999999999%,
+      rgba(205, 205, 205, 0.03) 71.43%,
+      rgba(205, 205, 205, 0.03) 85.71600000000001%,
+      rgba(53, 53, 53, 0.03) 85.716%,
+      rgba(53, 53, 53, 0.03) 100.002%
     ),
-    radial-gradient(
-      circle at 26% 86%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 17%,
-      transparent 17%,
-      transparent 52%,
-      transparent 52%,
-      transparent 100%
+    linear-gradient(
+      45deg,
+      rgba(214, 214, 214, 0.03) 0%,
+      rgba(214, 214, 214, 0.03) 16.667%,
+      rgba(255, 255, 255, 0.03) 16.667%,
+      rgba(255, 255, 255, 0.03) 33.334%,
+      rgba(250, 250, 250, 0.03) 33.334%,
+      rgba(250, 250, 250, 0.03) 50.001000000000005%,
+      rgba(231, 231, 231, 0.03) 50.001%,
+      rgba(231, 231, 231, 0.03) 66.668%,
+      rgba(241, 241, 241, 0.03) 66.668%,
+      rgba(241, 241, 241, 0.03) 83.33500000000001%,
+      rgba(31, 31, 31, 0.03) 83.335%,
+      rgba(31, 31, 31, 0.03) 100.002%
     ),
-    radial-gradient(
-      circle at 52% 88%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 49%,
-      transparent 49%,
-      transparent 70%,
-      transparent 70%,
-      transparent 100%
+    linear-gradient(
+      59deg,
+      rgba(224, 224, 224, 0.03) 0%,
+      rgba(224, 224, 224, 0.03) 12.5%,
+      rgba(97, 97, 97, 0.03) 12.5%,
+      rgba(97, 97, 97, 0.03) 25%,
+      rgba(143, 143, 143, 0.03) 25%,
+      rgba(143, 143, 143, 0.03) 37.5%,
+      rgba(110, 110, 110, 0.03) 37.5%,
+      rgba(110, 110, 110, 0.03) 50%,
+      rgba(34, 34, 34, 0.03) 50%,
+      rgba(34, 34, 34, 0.03) 62.5%,
+      rgba(155, 155, 155, 0.03) 62.5%,
+      rgba(155, 155, 155, 0.03) 75%,
+      rgba(249, 249, 249, 0.03) 75%,
+      rgba(249, 249, 249, 0.03) 87.5%,
+      rgba(179, 179, 179, 0.03) 87.5%,
+      rgba(179, 179, 179, 0.03) 100%
     ),
-    radial-gradient(
-      circle at 62% 41%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 14%,
-      transparent 14%,
-      transparent 45%,
-      transparent 45%,
-      transparent 100%
+    linear-gradient(
+      241deg,
+      rgba(58, 58, 58, 0.02) 0%,
+      rgba(58, 58, 58, 0.02) 25%,
+      rgba(124, 124, 124, 0.02) 25%,
+      rgba(124, 124, 124, 0.02) 50%,
+      rgba(254, 254, 254, 0.02) 50%,
+      rgba(254, 254, 254, 0.02) 75%,
+      rgba(52, 52, 52, 0.02) 75%,
+      rgba(52, 52, 52, 0.02) 100%
     ),
-    radial-gradient(
-      circle at 54% 59%,
-      hsla(77, 0%, 3%, 0.05) 0%,
-      hsla(77, 0%, 3%, 0.05) 42%,
-      transparent 42%,
-      transparent 86%,
-      transparent 86%,
-      transparent 100%
-    ),
-    linear-gradient(135deg, hsl(196, 0%, 96%), hsl(196, 0%, 96%));
+    linear-gradient(90deg, #ffffff, #ffffff);
 }
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
@@ -313,7 +377,7 @@ body {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  margin: 1rem;
+  /* margin: 1rem; */
   width: 50%;
 }
 .result-list a {
@@ -321,12 +385,15 @@ body {
   color: black;
 }
 .items {
-  border-bottom: 1px solid lightgray;
   margin-bottom: 0.5rem;
-  padding-bottom: 0.33rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 2px solid #61d1f7;
+  border-radius: 6px;
+  padding: 0.25rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: white;
 }
 .items a {
   display: flex;
@@ -348,9 +415,9 @@ body {
   font-family: "montserrat";
 }
 .start-compare-button {
-  background-color: #61d1f7;
+  background-color: white;
   color: black;
-  border: 1px solid white;
+  border: 1px solid #61d1f7;
   border-radius: 6px;
   padding: 0.33rem;
   font-family: "montserrat";
@@ -536,6 +603,10 @@ body {
   text-align: center;
   padding: 0 1rem;
 }
+.sector-span {
+  margin-left: 0.33rem;
+  color: #32cd32;
+}
 .stock-price-wrapper {
   display: flex;
 }
@@ -576,7 +647,7 @@ body {
   width: 85%;
   text-align: center;
   letter-spacing: 0.02em;
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   border-bottom: 2px solid slategray;
 }
 .company-description-compare p {
@@ -604,6 +675,12 @@ body {
 .compare-title-text {
   font-family: "montserrat", Arial, sans-serif;
   margin: 2rem 0;
+  border: 2px solid #61d1f7;
+  border-radius: 6px;
+  padding: 0.25rem;
+  background-color: white;
+  color: black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .compare-results-wrapper {
   display: flex;
@@ -625,5 +702,5 @@ body {
   margin: 0 1rem;
   overflow: auto;
   width: 33%;
-  height: 90%;
+  height: 85%;
 }
